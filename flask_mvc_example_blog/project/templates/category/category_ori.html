@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <header>
+      <p><a href = "/login">login</a> / <a href = "/home">home</a></p>
+    </header>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+      hello
+      <form method="post" action="/page/manage_page">
+          <input type='text' name='page_name' id='page_name' placeholder='page_name'/><br>
+          <br>
+          <textarea id="page_content" name="page_content" rows="4" cols="30"></textarea><br>
+          <input type="submit" value="create" name="action"/>
+          <input type="submit" value="delete" name="action"/>
+      </form>
+      <br>
+
+      {% for page in pages %}
+          <a href = "/page/{{page.name}}">
+            <option value="{{ page.name }}">{{ page.name }}</option>
+          </a>
+      {% endfor %}
+    </body>
+    <footer>
+      <p>&lt;footer&gt;hello</p>
+    </footer>
+</html>

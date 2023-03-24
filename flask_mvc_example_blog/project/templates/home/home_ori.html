@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <header>
+      <p><a href = "/login">login</a> / <a href = "/home">home</a></p>
+    </header>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+      <form method="post" action="/category/manage_category">
+          <input type='text' name='category_name' id='category_name' placeholder='category_name'/><br>
+          <input type="submit" value="create" name="action"/>
+          <input type="submit" value="delete" name="action"/>
+      </form>
+      <br>
+
+      {% for category in categorys %}
+          <a href = "/category/{{category.name}}">
+            <option value="{{ category.name }}">{{ category.name }}</option>
+          </a>
+      {% endfor %}
+
+    </body>
+    <footer>
+      <p>footer</p>
+    </footer>
+</html>
